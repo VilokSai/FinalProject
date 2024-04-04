@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            text-align: center;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 20px;
+        }
+        .quote {
+            font-style: italic;
+            color: #6c757d;
+            margin-bottom: 40px;
+        }
+        .half {
+            display: flex;
+            width: 80%;
+            justify-content: space-around;
+            margin-bottom: 40px;
+        }
+        .half .summary {
+            width: 45%;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .summary h2 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        .summary p {
+            color: #212529;
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Text Summarization</h1>
+        <p class="quote">"Summarizing the essence, simplifying the understanding."</p>
+        <div class="half">
+            <div class="summary">
+                <h2>Extractive Summarization</h2>
+                <p>Extractive summarization involves selecting and extracting the most important sentences or phrases from the original text to create a summary. It relies on identifying key information without altering the content.</p>
+                <a href="{{ url_for('extractive') }}" class="button">summarize</a>
+            </div>
+            <div class="summary">
+                <h2>Abstractive Summarization</h2>
+                <p>Abstractive summarization generates a concise summary by interpreting and paraphrasing the original text. It involves understanding the context and generating new phrases to convey the main ideas.</p>
+                <a href="{{ url_for('abstractive') }}" class="button">summarize</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
